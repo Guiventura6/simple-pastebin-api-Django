@@ -1,4 +1,4 @@
-from codes.models import Codes
+from codes.models import Code
 from codes.permissions import IsOwnerOrReadOnly
 from codes.serializers import CodeSerializer, UserSerializer
 from django.contrib.auth.models import User
@@ -15,7 +15,7 @@ class CodeViewSet(viewsets.ModelViewSet):
 
     Additionally we also provide an extra `highlight` action.
     """
-    queryset = Codes.objects.all()
+    queryset = Code.objects.all()
     serializer_class = CodeSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
