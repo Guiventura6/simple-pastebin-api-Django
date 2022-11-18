@@ -1,4 +1,4 @@
-from codes.models import LANGUAGE_CHOICES, STYLE_CHOICES, Code
+from codes.models import LANGUAGE_CHOICES, STYLE_CHOICES, Codes
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
@@ -8,7 +8,7 @@ class CodeSerializer(serializers.HyperlinkedModelSerializer):
     highlight = serializers.HyperlinkedIdentityField(view_name='code-highlight', format='html')
     
     class Meta:
-        model = Code
+        model = Codes
         fields = ['url', 'id', 'highlight', 'owner',
                   'title', 'code', 'linenos', 'language', 'style']
         
